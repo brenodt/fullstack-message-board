@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  server:
+    image: node:lts-buster-slim
+    volumes:
+      - .:/message-board/server
+    working_dir: /message-board/server
+    command: npm run start
+    ports:
+      - "2727:2727"
