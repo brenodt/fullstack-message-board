@@ -35,6 +35,17 @@ app.get('/messages', (req, res) => {
     });
 });
 
+// Version 3: Option to create a message, with error handling enabled
+app.post('/messages', (req, res) => {
+   console.log(req.body);
+   messages.create(req.body).then((message) => {
+       res.json(message);
+    }).catch((error) => {
+        res.status(500);
+        res.json(error);
+   });
+});
+
 // Starts listening to either port defined in .env file, or 2727
 const port = process.env.PORT || 2727;
 app.listen(port, () => {
