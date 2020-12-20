@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="#/">FullStack Message Board</a>
     </nav>
-    <router-view/>
+    <router-view class="container" />
   </div>
 </template>
 
